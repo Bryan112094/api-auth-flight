@@ -8,8 +8,8 @@ $dotenv->load();
 $users = new Users();
 
 
-//Todos los datos
-Flight::route('GET /users', [$users, 'selectAll']);
+//Todos los datos -> el parametro entre parentesis es para que sea opcional
+Flight::route('GET /users(/@page)', [$users, 'selectAll']);
 
 //Dato especifico
 Flight::route('GET /users/@id', [$users, 'selectOne']);
